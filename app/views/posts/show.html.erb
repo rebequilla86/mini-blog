@@ -6,13 +6,18 @@
 </p>
 
 <p>
+  <b>Category:</b>
+  <%= @post.category %>
+</p>
+
+<p>
   <b>Body:</b>
   <%= @post.body %>
 </p>
 
 <p>
-  <b>Category:</b>
-  <%= @post.category %>
+  <b>Comments:</b>
+  <%= link_to pluralize(@post.comments.count, "comments"), post_comments_path(@post) %>
 </p>
 
 
