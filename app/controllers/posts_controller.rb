@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with :name => "admin", :password => "admin123", :except => [:index, :show]
+  skip_before_filter :require_admin, :only => [:index, :show]
+
+  #http_basic_authenticate_with :name => "admin", :password => "admin123", :except => [:index, :show]
+  
   # GET /posts
   # GET /posts.json
   def index
